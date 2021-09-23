@@ -1,3 +1,27 @@
 h2 {
     background-color: bisque;
 }
+
+li {
+    background-color: burlywood;
+    color:darkgreen;
+    font-family: monospace;
+    font-size: 24px;
+}
+
+/* some comments */
+/* it means apply rule to list items whose parent is ordered list */
+/* so this is a more specific selector than the one above */
+ol > li {
+    background-color: darkorange;
+}
+
+/* so classes let us be more specific than just tags or just tag relations */
+.rtu-class {
+    background-color: floralwhite;
+}
+
+#my-special-id-1 {
+    background-color: fuchsia;
+    color: darkslateblue
+}
