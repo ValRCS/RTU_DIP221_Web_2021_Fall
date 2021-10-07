@@ -1,0 +1,35 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+
+.box {
+    background-color: burlywood;
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+    padding: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .box {
+        background-color: crimson;
+        font-size: 1.5rem;
+    }
+}
+
+/* @media screen and (min-width: 768px) and (max-width:992px) {  possible to add upper limit*/
+@media screen and (min-width: 768px)  {
+    html {
+        font-size: 24px;
+    }
+
+    .box {
+        background-color: forestgreen;
+        height: 150px;
+        width: 150px;
+        font-size: 1.2rem;
+    }
+}
