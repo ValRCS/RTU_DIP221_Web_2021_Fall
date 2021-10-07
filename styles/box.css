@@ -1,0 +1,86 @@
+html {
+    /* font-size: 2rem;  */
+    /* so about 32px 1 rem here would be 16px (but not always) */
+    font-size: 20px;
+}
+
+p {
+    margin-top: 4rem;
+}
+
+a {
+    background-color: bisque;
+    /* display: block; */
+}
+
+h2 {
+    background-color: darkturquoise;
+}
+
+.container {
+    border: 3px solid red;
+    position: relative;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: goldenrod;
+    border: 2px dashed blue;
+}
+
+.box-2 {
+    background-color: green;
+    position: relative;
+    left: 30px;
+    /* bottom: 10px; */
+    top: 20px;
+}
+
+.box-3 {
+    background-color: hotpink;
+    position: absolute;
+    top: 40px;
+    left: 45px;
+    z-index: 999;
+}
+
+.box-4 {
+    background-color: indianred;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.generic-div-block {
+    border: 3px solid blue;
+    margin-bottom: 40px;
+}
+
+.special-anchor {
+    /* display: block; */
+    /* display:inline-block; */
+    width: 150px;
+    height: 40px;
+}
+
+.logo-img {
+    border: 2px solid blue;
+    width: 150px;
+    background-color: blanchedalmond;
+    padding: 10px;
+    margin: 15px;
+}
+
+.round-borders {
+    /* border-radius: 5px; */
+    border-radius: 10%;
+}
+
+.uneven-padding {
+    padding: 20px 30px 50px 50px;
+}
+
+.lorem-article {
+    margin-top: 5rem;
+}
