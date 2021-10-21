@@ -1,0 +1,55 @@
+.container {
+    display: grid;
+    /* grid-template-columns: 100px 300px 150px; */
+    /* grid-template-columns: 1fr 2fr 3fr 2fr; */
+    /* grid-template-columns: 12.5% 25% 37.5% 25%; */
+    /* there are also shortcuts for repeating some rules with repeat */
+    grid-template-rows: repeat(4, 25px);
+    /* grid-template-rows: 75px 75px 75px 75p 75px; same as above */
+    grid-template-columns: 1fr 1fr 1fr 1fr;  
+    
+    
+}
+
+.box4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(5, 50px);
+    grid-template-areas: 
+    "start start start"
+    "ad content navig"
+    "ad content navig"
+    "ad content navig"
+    "end end end";
+}
+
+.start {
+    grid-area: start;
+    background-color: darkseagreen;
+}
+
+.ad {
+    grid-area: ad;
+    background-color: hotpink;
+}
+
+.content    {
+    grid-area: content;
+    background-color: indianred;
+}
+
+.end {
+    grid-area: end;
+    background-color: lightblue;
+}
+
+.navig {
+    grid-area: navig;
+    background-color: lightslategray;
+}
