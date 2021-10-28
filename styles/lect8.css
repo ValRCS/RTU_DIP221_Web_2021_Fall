@@ -1,0 +1,78 @@
+.ad-container {
+    /* background-color: blanchedalmond; */
+    display: none;
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 20% 60% 20%; /* same as 1fr 3fr 1fr  */
+    grid-template-rows: repeat(5, 18vh); /* 15vh 5 times*/
+    grid-template-areas: 
+    "nav nav nav"
+    "ad ad ad"
+    "content content content"
+    "side side side"
+    "footer footer footer";
+
+}
+
+.nav-content {
+    grid-area: nav;
+    background-color: gold;
+}
+
+.inner-ad {
+    grid-area: ad;
+    background-color: indianred;
+}
+
+.main-content {
+    grid-area: content;
+    background-color: lightblue;
+}
+
+.sidebar {
+    grid-area: side;
+    background-color: lightsalmon;
+}
+
+.footer-content {
+    grid-area: footer;
+    background-color: olive;
+}
+
+
+@media screen and  (min-width: 576px) {
+    .ad-container {
+        display: block;
+        background-color: deeppink;
+        /* background-color: rgb(114, 78, 23); */
+    }
+
+    .cont {
+        grid-template-areas: 
+        "nav nav nav"
+        "content content ad"
+        "content content side"
+        "content content side"
+        "footer footer footer";
+    }
+}
+
+@media (min-width: 992px) {
+    .ad-container {
+        background-color: forestgreen;
+        font-size: 32px;
+    }
+
+    .cont {
+        grid-template-columns: 15% 70% 15%;
+        grid-template-areas: 
+        "nav nav nav"
+        "side content ad"
+        "side content ad"
+        "side content ad"
+        "footer footer footer";
+    }
+
+}
