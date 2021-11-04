@@ -24,11 +24,18 @@
 .inner-ad {
     grid-area: ad;
     background-color: indianred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-box {
+    background-color: orangered;
 }
 
 .main-content {
     grid-area: content;
-    background-color: lightblue;
+    background-color: lightblue !important;
 }
 
 .sidebar {
@@ -41,12 +48,43 @@
     background-color: olive;
 }
 
+.ad-box:hover {
+    /* transform: scale(2,3);  */
+    /* Equal to scaleX(2) scaleY(3) */
+    /* transform: rotateX(180deg); */
+    /* no comma for multiple transforms */
+    /* transform:  translate(20px,150px); */
+    transform: scale(2,3) rotateY(180deg);
+
+}
+
+.inner-nav:hover {
+    background-color: orchid;
+    animation: 4s infinite nav-anim;
+
+
+}
+
+@keyframes nav-anim {
+    0% { 
+        background-color: red;
+    }
+    30% { 
+        transform: scale(1.5);
+    }
+    68% { transform: scale(0.7); }
+    100% {background-color: brown; } 
+}
 
 @media screen and  (min-width: 576px) {
     .ad-container {
         display: block;
         background-color: deeppink;
         /* background-color: rgb(114, 78, 23); */
+    }
+
+    .ad-box {
+        transform: scale(1.5); /* Equal to scaleX(1.5) scaleY(1.5) */
     }
 
     .cont {
