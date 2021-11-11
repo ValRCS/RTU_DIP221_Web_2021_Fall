@@ -112,3 +112,7 @@ if (myTemp > 37) {
 //so only one of the above three paths will run
 
 console.log("This will always run")
+
+let userName = prompt("What is your name friend?")
+const app = document.getElementById("my-app") //ids should be unique
+app.textContent += `Nice to meet you ${userName}!`
