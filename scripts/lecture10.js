@@ -76,3 +76,39 @@ myToggle = !myToggle
 console.log("myToggle is now", myToggle)
 myToggle = !myToggle
 console.log("myToggle is now", myToggle)
+
+//conditional branching
+let outsideTemp = 8
+if (outsideTemp > 25) console.log("A little bit hot outside isn't it?", outsideTemp)
+outsideTemp += 20 //same as outsideTemp = outsideTemp + 20
+if (outsideTemp > 25) console.log("A little bit hot outside isn't it?", outsideTemp)
+
+outsideTemp += 20 
+if (outsideTemp > 35) {
+    console.log("It is getting really hot now", outsideTemp)
+    console.log("Let's go buy an air conditioner")
+}
+
+//we can use truthy / falsy properties of values
+if (myName) {
+    console.log("Cool you have a truthy name", myName)
+}
+
+myTemp = 35.7
+if (myTemp >= 36 && myTemp <= 37) {
+    console.log("Cool! You are in great shape. Your temperature is", myTemp)
+} else { //so if the if is false we do this
+    console.log("Hmm your temp is not healthy", myTemp)
+}
+
+myTemp = 37.6
+if (myTemp > 37) {
+    console.log("You have a fever of ", myTemp)
+} else if (myTemp < 36) {
+    console.log("You are quite cold your temp is", myTemp)
+} else { //the healthy branch
+    console.log("Great! you are healthy with temperature of", myTemp)
+}
+//so only one of the above three paths will run
+
+console.log("This will always run")
