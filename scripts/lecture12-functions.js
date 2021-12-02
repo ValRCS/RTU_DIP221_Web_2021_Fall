@@ -111,3 +111,7 @@ console.log(anotherCube)
 
 // Two independent actions usually deserve two functions, 
 // even if they are usually called together (in that case we can make a 3rd function that calls those two).
+
+
+const myDivision = divide(50, 10) // so divide definition comes from utilitis.js
+console.log(myDivision)
