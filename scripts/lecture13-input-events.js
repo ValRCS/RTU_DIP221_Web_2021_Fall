@@ -13,6 +13,11 @@ console.log("inputEl is same as first element in allInputs", inputEl === allInpu
 const logEl = document.getElementById('values'); //I get an element with particular id
 const capitalsElement = document.getElementById('values-2'); //preferably you can come up with better variable names
 
+//another option of getting elements is to use class name
+const adders = document.getElementsByClassName("add-input");
+const resultElement = document.getElementById("result-val");
+let additionResult = 0; //not required but useful to save the result
+
 //so call updateValue function whenever there is an input event on inputEl element
 // inputEl.addEventListener('input', updateValue) ;
 //I can replace the above with a call by index to the first element(starts at 0 not 1 )
@@ -33,12 +38,24 @@ for (const inputElement of allInputs) {
 for (let i = 0; i < allInputs.length; i++) {
   console.log("We have an element No.", i, " will add handler")
   allInputs[i].addEventListener('change',updateValueCapitalize);
+  // allInputs[i].addEventListener('focus', whenInFocus);
+  
+  allInputs[i].onfocus = whenInFocus; //this only lets me have a single function for this particular event
+  //so above onfocus would overwrite older handlers for this onfocus event
+}
+
+//so we will use the same updateAdditionResults function 
+//for both addition inputs
+for (let i = 0; i < adders.length; i++) {
+  console.log("Adding change listener to adder No. ", i);
+  adders[i].addEventListener('input', updateAdditionResults)
 }
 
 function updateValue(event) {
     console.log("input was changed");
     console.log("input element is equal to event target", inputEl === event.target);
     logEl.textContent = event.target.value;
+    // logEl.textContent += event.target.value; //this would add to the end of text of logElement
   }
 
   function updateValueCapitalize(event) {
@@ -46,3 +63,26 @@ function updateValue(event) {
     capitalsElement.textContent = event.target.value.toUpperCase();
 
   }
+
+  function updateAdditionResults(event) {
+    console.log("updating results element")
+    //FIXME below will need some fixing
+    additionResult = parseInt(adders[0].value) + parseInt(adders[1].value)
+    console.log("New additionResult is", additionResult)
+    resultElement.value = additionResult;
+  }
+
+  //in this example from MDN
+  //we do not declare a function ahead of time
+  //but we make up a function on the spot (so called anonymous function)
+  //why because we do not need it elsewhere that is an alternative approach
+  document.querySelector("#id-checkbox").addEventListener("click", function(event) {
+    document.getElementById("output-box").innerHTML += "Sorry! <strong><code>preventDefault()</code></strong> won't let you check this!<br>";
+    event.preventDefault();
+}, false);
+
+function whenInFocus(event) {
+  console.log("Element with value", event.target.value, "is in focus!");
+  console.log("Element has innerHTML of", event.target.innerHTML)
+  console.log("Element has id of", event.target.id)
+}
