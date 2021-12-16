@@ -41,7 +41,17 @@ function onGenerateElementsClick(ev) {
 
     //we will create a loop to create as many elements as our count indicates
     for (let i=0; i<count; i++) {
-        createNewElement(resultParent, "div", id=i, classes=["strong-el", "dark-col"], text="Hello there!");
+        const txt = "Element No." + i;
+
+        classArray = ["strong-el"];
+        //now depending on the reminder (odd /even here)
+        //we will add another class to our class names array
+        if (i % 2 == 0) {
+            classArray.push("dark-col");
+        } else { //odd reminder is 1
+            classArray.push("light-col");
+        }
+        createNewElement(resultParent, "div", id=i, classes=classArray, text=txt);
     }
     
 }
