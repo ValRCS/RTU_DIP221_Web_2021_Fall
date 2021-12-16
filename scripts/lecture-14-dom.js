@@ -75,9 +75,7 @@ function onGenerateElementsClick(ev) {
     
 }
 
-//alternative would be 
-//addEventListener('click', onGenerateElementsClick)
-genButton.onclick = onGenerateElementsClick //notice no parenthesis!
+
 
 function onClearAllElements() {
     console.log("Will clear all elements");
@@ -93,4 +91,23 @@ function onClearAllElements() {
     
 }
 
-clearButton.onclick = onClearAllElements;
+
+
+
+function onPageLoaded() {
+    console.log("This runs when the page is ready");
+    //we could put everything here 
+    //if we did not have defer (which activates slightly faster)
+    //we could add all the code here
+    //alternative would be 
+    //addEventListener('click', onGenerateElementsClick)
+    genButton.onclick = onGenerateElementsClick //notice no parenthesis!
+
+    clearButton.onclick = onClearAllElements;
+}
+
+//good practice to add listeners actually once the page is loaded
+//we have defer that suffices actually
+//https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+//load event fires slightly after defer
+window.onload = onPageLoaded //so onPageLoaded will only run when onload event is fired
