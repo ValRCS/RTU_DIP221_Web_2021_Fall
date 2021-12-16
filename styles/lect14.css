@@ -1,0 +1,9 @@
+.strong-el {
+    background-color: rgb(88, 156, 88);
+    border: 2px rgb(80, 73, 58) solid;
+    border-radius: 5px;
+    margin: 3px;
+    width: 60px;
+    height: 60px;
+    
+}
